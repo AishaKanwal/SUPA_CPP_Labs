@@ -11,8 +11,10 @@ int main() {
     // Path to the file
     std::string filePath = "/workspaces/SUPA_CPP_Labs/Exercises2024/Ex1_2/input2D_float.txt";
     
-    // Number of lines to print
-    int N = 5; // Change this to the number of lines you want to print
+    // Ask the user to input the number of lines to print
+    int N;
+    std::cout << "Enter the number of lines to print: ";
+    std::cin >> N;
 
     // Calling readAndPrintData function to print first N lines
     readAndPrintData(filePath, N);

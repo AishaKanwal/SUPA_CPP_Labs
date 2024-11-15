@@ -1,0 +1,2 @@
+Line of best fit: y = 0.126266x + 2.02628
+Chi-squared: 23.7526

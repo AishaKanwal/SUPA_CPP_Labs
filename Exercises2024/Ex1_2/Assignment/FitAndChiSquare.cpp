@@ -1,5 +1,3 @@
-// FitAndChiSquare.cpp
-
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -17,7 +15,6 @@ void FitLineAndChiSquare(const std::string& filePath) {
 
     std::vector<std::pair<double, double>> data; // To store (x, y) pairs
     std::string line;
-
     // Skip the header
     std::getline(inputFile, line);
 
@@ -53,10 +50,8 @@ void FitLineAndChiSquare(const std::string& filePath) {
     double p = (N * sum_xy - sum_x * sum_y) / (N * sum_xx - sum_x * sum_x);
     double q = (sum_y * sum_xx - sum_x * sum_xy) / (N * sum_xx - sum_x * sum_x);
 
-    std::cout << "Line of best fit: y = " << p << "x + " << q << std::endl;
-
-    //open the output file
-    std::ofstream outputFile("FitStraight_output.txt");
+    // Open the output file
+    std::ofstream outputFile("FitAndChiSquare_output.txt");
 
     // Check if the file was opened successfully
     if (!outputFile) {
@@ -74,10 +69,8 @@ void FitLineAndChiSquare(const std::string& filePath) {
         chi_squared += std::pow(pair.second - expected_y, 2) / expected_y;
     }
 
-    std::cout << "Chi-squared: " << chi_squared << std::endl;
+    // Output the chi-squared value
+    outputFile << "Chi-squared: " << chi_squared << std::endl;
 
-    //output the chi-squared values
-    outputFile <<"Chi-Squared: "<< chi_squared<<std::endl;
-
-    outputFile.close();
+    outputFile.close();  // Close the output file
 }
