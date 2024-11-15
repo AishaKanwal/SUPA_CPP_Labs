@@ -19,6 +19,15 @@ void CalculateMagnitude(const std::string& filePath) {
     std::string line;
     bool isFirstLine = true;
 
+    // open the output file
+    std::ofstream outputFile("CalculateMagnitude_output.txt");
+
+    // check if the output file opened successfully
+    if(!outputFile) {
+        std::cerr<<"Error: Could not open output file!" <<std::endl;
+        return;
+    }
+
     // Loop through each line in the file
     while (std::getline(inputFile, line)) {
         // Skip the first row (header)
@@ -44,7 +53,14 @@ void CalculateMagnitude(const std::string& filePath) {
         // Calculate the magnitude for the pair (x, y)
         float magnitude = std::sqrt(x * x + y * y);
         std::cout << "Magnitude of (" << x << ", " << y << ") = " << magnitude << std::endl;
+
+        // output the magnitude to console
+        std::cout<<"Magnitude of("<<x<<", "<<y<<") = " <<  magnitude<<std::endl;
+
+        // save the result of the file:
+        outputFile <<"Magnitude of("<<x<<", "<<y<<") = " <<  magnitude<<std::endl;
     }
 
     inputFile.close();
+    outputFile.close();
 }

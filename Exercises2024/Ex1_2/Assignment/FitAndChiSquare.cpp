@@ -17,6 +17,7 @@ void FitLineAndChiSquare(const std::string& filePath) {
 
     std::vector<std::pair<double, double>> data; // To store (x, y) pairs
     std::string line;
+
     // Skip the header
     std::getline(inputFile, line);
 
@@ -54,6 +55,18 @@ void FitLineAndChiSquare(const std::string& filePath) {
 
     std::cout << "Line of best fit: y = " << p << "x + " << q << std::endl;
 
+    //open the output file
+    std::ofstream outputFile("FitStraight_output.txt");
+
+    // Check if the file was opened successfully
+    if (!outputFile) {
+        std::cerr << "Error: Could not open output file!" << std::endl;
+        return;
+    }
+
+    // Write the line of best fit and chi-squared to the file
+    outputFile << "Line of best fit: y = " << p << "x + " << q << std::endl;
+
     // Perform the chi-squared test (simplified version)
     double chi_squared = 0;
     for (const auto& pair : data) {
@@ -62,4 +75,9 @@ void FitLineAndChiSquare(const std::string& filePath) {
     }
 
     std::cout << "Chi-squared: " << chi_squared << std::endl;
+
+    //output the chi-squared values
+    outputFile <<"Chi-Squared: "<< chi_squared<<std::endl;
+
+    outputFile.close();
 }
