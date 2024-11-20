@@ -9,6 +9,7 @@
 #include <algorithm>
 #include "CalculateXY.h"
 
+
 void CalculateXY(const std::string& filePath) {
     // Open file
     std::ifstream inputFile(filePath);
@@ -59,7 +60,7 @@ void CalculateXY(const std::string& filePath) {
         return;
     }
 
-    // Output the x^y values
+    // Output the x^y values // we can use L"x\u0B8" for x power y with wcout cmd
     std::cout << "Calculated x^y for each data point:" << std::endl;
     for (const auto& value : xy_values) {
         std::cout << value << std::endl;
