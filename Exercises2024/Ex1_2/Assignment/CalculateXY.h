@@ -9,3 +9,4 @@
 void CalculateXY(const std::string& filePath);
 
 #endif // CALCULATE_XY_H
+

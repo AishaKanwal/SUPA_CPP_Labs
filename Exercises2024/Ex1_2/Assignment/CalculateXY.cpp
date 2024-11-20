@@ -9,6 +9,7 @@
 #include <algorithm>
 #include "CalculateXY.h"
 
+
 void CalculateXY(const std::string& filePath) {
     // Open file
     std::ifstream inputFile(filePath);

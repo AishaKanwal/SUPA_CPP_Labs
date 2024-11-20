@@ -6,6 +6,7 @@
 #include <cmath>
 #include "FitAndChiSquare.h"
 
+
 void FitLineAndChiSquare(const std::string& filePath) {
     std::ifstream inputFile(filePath);
     if (!inputFile) {

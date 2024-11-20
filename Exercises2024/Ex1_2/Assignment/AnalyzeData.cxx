@@ -7,6 +7,7 @@
 #include "FitAndChiSquare.h"
 #include "CalculateXY.h"
 
+
 int main() {
     // Path to the file
     std::string filePath = "/workspaces/SUPA_CPP_Labs/Exercises2024/Ex1_2/input2D_float.txt";
