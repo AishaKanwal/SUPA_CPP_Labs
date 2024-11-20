@@ -19,7 +19,6 @@ void CalculateMagnitude(const std::string& filePath) {
     std::string line;
     bool isFirstLine = true;
 
-
     // open the output file
     std::ofstream outputFile("CalculateMagnitude_output.txt");
 
