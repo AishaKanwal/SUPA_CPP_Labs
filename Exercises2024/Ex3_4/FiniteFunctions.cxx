@@ -63,8 +63,21 @@ Integration by hand (output needed to normalise function when plotting)
 */ 
 double FiniteFunction::integrate(int Ndiv){ //private
   //ToDo write an integrator
-  return -99;  
+  // Trapezoidal rule for numerical integration
+  double step = (m_RMax - m_RMin) / Ndiv; // stepsize for each subdiv.
+  double integralSum = 0.5* (this->callFunction(m_RMin)+ this->callFunction(m_RMax)); // add first and last points
+
+  //sum over the intermediate points
+  for(int i =1; i<Ndiv; ++i) {
+    double x = m_RMin +i*step;
+    integralSum+= this->callFunction(x); // add function values at intermediate points
+  }
+
+  // multiply by the stepsize to get the final integral value
+  double integralValue = integralSum*step;
+  return integralValue;  
 }
+
 double FiniteFunction::integral(int Ndiv) { //public
   if (Ndiv <= 0){
     std::cout << "Invalid number of divisions for integral, setting Ndiv to 1000" <<std::endl;
