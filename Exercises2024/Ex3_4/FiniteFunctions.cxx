@@ -63,7 +63,7 @@ Integration by hand (output needed to normalise function when plotting)
 */ 
 double FiniteFunction::integrate(int Ndiv){ //private
   //ToDo write an integrator
-  // Trapezoidal rule for numerical integration
+  // Trapezoidal rule for numerical integration -- 27/11/2024
   double step = (m_RMax - m_RMin) / Ndiv; // stepsize for each subdiv.
   double integralSum = 0.5* (this->callFunction(m_RMin)+ this->callFunction(m_RMax)); // add first and last points
 
