@@ -3,7 +3,7 @@ FLAGS=-std=c++20 -w #Compiler flags (the s makes it silent)
 # TARGET=FiniteFunctions
 # OBJECTS=FiniteFunctions.o 
 TARGET=Test #Executable name
-OBJECTS=Test.o FiniteFunctions.o readmystery.o # Added readmystery.o to OBJECTS
+OBJECTS=Test.o FiniteFunctions.o readmystery.o CustomFunctions.o # Added readmystery.o  and CustomFunctions.o to OBJECTS
 LIBS=-I ../../GNUplot/ -lboost_iostreams
 
 #First target in Makefile is default
@@ -20,6 +20,9 @@ FiniteFunctions.o : FiniteFunctions.cxx FiniteFunctions.h
 
 readmystery.o : readmystery.cpp readmystery.h #added target for readmystery.o
 	${CC} ${FLAGS} ${LIBS} -c readmystery.cpp 
+
+CustomFunctions.o : CustomFunctions.cxx CustomFunctions.h FiniteFunctions.h
+	${CC} ${FLAGS} ${LIBS} -c CustomFunctions.cxx
 
 clean: #No targets just run shell command to rm object files and emacs backups
 	@rm -f *.o *~
