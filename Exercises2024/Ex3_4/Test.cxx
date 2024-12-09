@@ -65,7 +65,7 @@ int main() {
     // ========================== Testing Cauchy-Lorentz Distribution ==========================
 
     // ============================= Sample Data =============================
-    std::cout << "\nTest 2: Cauchy-Lorentz Distribution" << std::endl;
+    std::cout << "\nTesting Cauchy-Lorentz Distribution on sample data" << std::endl;
     CauchyLorentzDistribution cauchy(-4.0, 4.0, 0.0, 1.0, "CauchyLorentzDistribution");
     cauchy.printInfo(); // Print details
     double integralCauchy = cauchy.integral(1000);
@@ -83,7 +83,7 @@ int main() {
     // ======================= Testing Negative Crystal Ball Distribution =======================
 
     // ============================= Sample Data =============================
-    std::cout << "\nTest 3: Negative Crystal Ball Distribution" << std::endl;
+    std::cout << "\nTesting Negative Crystal Ball Distribution on sample data" << std::endl;
     NegativeCrystalBallDistribution crystal(-4.0, 4.0, 1.0, 0.0, 1.5, 2.0, "NegativeCrystalBall");
     crystal.printInfo();
     double integralCrystal = crystal.integral(1000);
